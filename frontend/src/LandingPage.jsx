@@ -158,46 +158,10 @@ export default function LandingPage({ onGetStarted }) {
             inset 0 0 0 1px rgba(255, 255, 255, 0.42);
         }
 
-        .landing-shield {
-          position: relative;
-          width: 24px;
-          height: 28px;
-          border-radius: 9px 9px 12px 12px;
-          background: linear-gradient(180deg, var(--deep-blue), #02101d);
-          clip-path: polygon(50% 0, 92% 15%, 84% 74%, 50% 100%, 16% 74%, 8% 15%);
-          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-        }
-
-        .landing-cross,
-        .landing-cross::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          border-radius: 999px;
-          background: var(--blue);
-          transform: translate(-50%, -50%);
-        }
-
-        .landing-cross {
-          width: 5px;
-          height: 15px;
-        }
-
-        .landing-cross::after {
-          width: 15px;
-          height: 5px;
-        }
-
-        .landing-signal {
-          position: absolute;
-          right: 4px;
-          top: 5px;
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: #ff5f6d;
-          box-shadow: 0 0 0 4px rgba(255, 95, 109, 0.18);
+        .landing-logo {
+          display: block;
+          width: 27px;
+          height: 31px;
         }
 
         .landing-brand-name {
@@ -879,10 +843,12 @@ export default function LandingPage({ onGetStarted }) {
       <nav className={`landing-nav ${scrolled ? "scrolled" : ""}`}>
         <a className="landing-brand" href="#top" aria-label="ScameHospital home">
           <span className="landing-mark" aria-hidden="true">
-            <span className="landing-shield">
-              <span className="landing-cross" />
-              <span className="landing-signal" />
-            </span>
+            <svg className="landing-logo" viewBox="0 0 48 54" role="img">
+              <path d="M24 3 42 10.5v15.2c0 11.6-7.4 20.2-18 25.3C13.4 45.9 6 37.3 6 25.7V10.5L24 3Z" fill="#06233d" />
+              <path d="M24 7.3 38 13v12.2c0 9.2-5.5 16.2-14 20.9-8.5-4.7-14-11.7-14-20.9V13l14-5.7Z" fill="#0b5fcc" />
+              <path d="M21 16h6v9h9v6h-9v9h-6v-9h-9v-6h9v-9Z" fill="#65e8ff" />
+              <circle cx="34.5" cy="15" r="4.3" fill="#ff5f6d" />
+            </svg>
           </span>
           <span className="landing-brand-name">Scame<span>Hospital</span></span>
         </a>
