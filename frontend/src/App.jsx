@@ -613,6 +613,12 @@ export default function App({ onBack = () => {} }) {
       return
     }
 
+    if (isFreePackage) {
+      reserveSlotLocally(form.date, form.time)
+      setStep(3)
+      return
+    }
+
     try {
       const response = await fetch(`${BACKEND_URL}/register`, {
         method: "POST",
