@@ -182,4 +182,4 @@ def send_admin_notification(admin_email: str, name: str, email: str, scam_type: 
     </body>
     </html>
     """
-    send_email(admin_email, subject, body)
+    send_emailsend_email(admin_email, subject, body)
