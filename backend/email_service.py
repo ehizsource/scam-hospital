@@ -144,3 +144,42 @@ def send_confirmation_email(
     </html>
     """
     send_email(email, subject, body)
+def send_admin_notification(admin_email: str, name: str, email: str, scam_type: str, package: str, date: str, time: str):
+    subject = f"New Booking — {name} ({package})"
+    body = f"""
+    <html>
+    <body style="font-family: Arial, sans-serif; background: #f0f4f8; padding: 30px;">
+        <div style="max-width: 600px; margin: auto; background: white; border-radius: 15px; padding: 40px;">
+            <h1 style="color: #0a1628;">Scame<span style="color: #00d4ff;">Hospital</span></h1>
+            <h2 style="color: #0a1628;">New Booking Received 🔔</h2>
+            <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
+                <tr>
+                    <td style="color: #888; padding: 10px 0; border-bottom: 1px solid #eee;">Name</td>
+                    <td style="font-weight: 600; color: #0a1628; border-bottom: 1px solid #eee;">{name}</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; padding: 10px 0; border-bottom: 1px solid #eee;">Email</td>
+                    <td style="font-weight: 600; color: #0a1628; border-bottom: 1px solid #eee;">{email}</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; padding: 10px 0; border-bottom: 1px solid #eee;">Scam Type</td>
+                    <td style="font-weight: 600; color: #0a1628; border-bottom: 1px solid #eee;">{scam_type}</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; padding: 10px 0; border-bottom: 1px solid #eee;">Package</td>
+                    <td style="font-weight: 600; color: #0a1628; border-bottom: 1px solid #eee;">{package}</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; padding: 10px 0; border-bottom: 1px solid #eee;">Date</td>
+                    <td style="font-weight: 600; color: #0a1628; border-bottom: 1px solid #eee;">{date}</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; padding: 10px 0;">Time</td>
+                    <td style="font-weight: 600; color: #0a1628;">{time}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    </html>
+    """
+    send_email(admin_email, subject, body)
